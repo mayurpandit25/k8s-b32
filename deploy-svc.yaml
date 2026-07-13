@@ -14,18 +14,18 @@ spec:
     rollingUpdate: 
       maxSurge: 1
       maxUnavailable: 1
-    template: 
-      metadata: 
-        name: my-template
-        labels: 
-          app: myapp
-      spec: 
-        containers: 
-          - name: nginx
-            image: nginx:latest
-            ports: 
-              - name: nginx-port
-                containerPort: 80
+  template: 
+    metadata: 
+      name: my-template
+      labels: 
+        app: myapp
+    spec: 
+      containers: 
+        - name: nginx
+          image: nginx:latest
+          ports: 
+            - name: nginx-port
+              containerPort: 80
 ...
 ---
 apiVersion: v1

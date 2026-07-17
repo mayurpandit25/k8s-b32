@@ -5,7 +5,7 @@ metadata:
   labels: 
     app: home 
 spec: 
-  replicas: 2
+  replicas: 1
   selector: 
     matchLabels: 
       app: home 
@@ -21,13 +21,6 @@ spec:
           ports: 
             - name: myport 
               containerPort: 80
-          resources: 
-            requests: 
-              cpu: "100m"
-              memory: "64Mi" 
-            limits: 
-              cpu: "200m"
-              memory: "128Mi"
 ...
 ---
 apiVersion: v1 

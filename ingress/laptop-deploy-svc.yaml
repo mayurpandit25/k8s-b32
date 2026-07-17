@@ -5,7 +5,7 @@ metadata:
   labels: 
     app: laptop
 spec: 
-  replicas: 2
+  replicas: 1
   selector: 
     matchLabels: 
       app: laptop
@@ -16,18 +16,11 @@ spec:
         app: laptop 
     spec: 
       containers: 
-        - name: httpd-container 
-          image: httpd:latest
-          ports: 
+        - name: tomcat-container 
+          image: tomcat:latest
+          ports:
             - name: myport 
-              containerPort: 80
-          resources: 
-            requests: 
-              cpu: "100m"
-              memory: "64Mi" 
-            limits: 
-              cpu: "200m"
-              memory: "128Mi"
+              containerPort: 8080
 ...
 ---
 apiVersion: v1 
@@ -43,8 +36,8 @@ spec:
   ports: 
     - name: laptop-svc-port 
       protocol: TCP 
-      port: 80 
-      targetPort: 80
+      port: 8080
+      targetPort: 8080
 ...
 ---
 apiVersion: autoscaling/v2 

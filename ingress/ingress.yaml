@@ -23,11 +23,11 @@ spec:
           service: 
             name: my-svc-mobile 
             port: 
-              number: 8080
+              number: 80
       - path: /laptop 
         pathType: Prefix 
         backend:  
           service:  
             name: my-svc-laptop 
             port:  
-              number: 80
+              number: 8080

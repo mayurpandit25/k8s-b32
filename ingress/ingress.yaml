@@ -14,20 +14,20 @@ spec:
         pathType: Prefix 
         backend: 
           service: 
-            name: my-svc-home 
+            name: home-svc 
             port: 
               number: 80 
       - path: /mobile 
         pathType: Prefix 
         backend: 
           service: 
-            name: my-svc-mobile 
+            name: mobile-svc 
             port: 
               number: 80
       - path: /laptop 
         pathType: Prefix 
         backend:  
           service:  
-            name: my-svc-laptop 
+            name: laptop-svc 
             port:  
               number: 8080
